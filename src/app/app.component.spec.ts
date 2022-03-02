@@ -29,3 +29,6 @@ describe('AppComponent', () => {
     expect(compiled.querySelector('.content span')?.textContent).toContain('catalogoMarvel app is running!');
   });
 });
+
+
+
