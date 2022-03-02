@@ -1,7 +1,12 @@
 
-<PRE>
-  <p *ngFor="let character of allCharacters | async">
-    {{ character | json}}
-  </p>
-</PRE>
+<div fxFlex fxLayout="column">
+  <div fxLayout="row wrap">
+
+    <div fxFlex="25" fxFlex.md="33" fxFle.sm="50" fxFlex.xs="100" fxLayout="column" *ngFor="let character  of allCharacters | async" style="padding: 15px">
+
+    <app-character [character]="character"></app-character>
+
+    </div>
+  </div>
+</div>
 

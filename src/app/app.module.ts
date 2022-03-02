@@ -14,6 +14,9 @@ import { CharacterComponent } from './characters/character/character.component';
 import { CharactersComponent } from './characters/characters.component';
 import { HttpClientModule } from "@angular/common/http";
 import {AppRoutingModule} from "../app-routing.module";
+import {FlexLayoutModule} from "@angular/flex-layout";
+import {MatCardModule} from "@angular/material/card";
+import {MatFormFieldModule} from "@angular/material/form-field";
 
 @NgModule({
   declarations: [
@@ -32,7 +35,10 @@ import {AppRoutingModule} from "../app-routing.module";
     MatIconModule,
     MatListModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FlexLayoutModule,
+    MatCardModule,
+    MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent]

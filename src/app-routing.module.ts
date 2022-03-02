@@ -9,6 +9,9 @@ const routes: Routes = [
   },
   {
     path:'characters', component: CharactersComponent
+  },
+  {
+    path:'hqs', component: CharactersComponent
   }
 ];
 @NgModule({
