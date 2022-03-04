@@ -9,12 +9,22 @@ import {CharactersApiService} from "./character/shared/characters-api.service";
 })
 export class CharactersComponent implements OnInit {
 
-  constructor(private characterSvc: CharactersApiService) { }
   allCharacters: Observable<any> | undefined;
+  paginaAtual: number = 1;
+  itemsPerPage: number = 8;
+  total: number = 1559;
+
+  constructor(private characterSvc: CharactersApiService) { }
   ngOnInit(): void {
-    this.getCharacters();
+    this.getCharacters(this.paginaAtual);
   }
-  getCharacters(){
-    this.allCharacters = this.characterSvc.getAllCharacters();
+
+  getCharacters(pageNumber: number){
+    this.allCharacters = this.characterSvc.getAllCharacters (this.itemsPerPage, pageNumber);
+  }
+
+  consultaPagina(e: number) {
+    this.paginaAtual = e;
+    this.getCharacters(this.paginaAtual)
   }
 }

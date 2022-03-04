@@ -17,6 +17,7 @@ import {AppRoutingModule} from "../app-routing.module";
 import {FlexLayoutModule} from "@angular/flex-layout";
 import {MatCardModule} from "@angular/material/card";
 import {MatFormFieldModule} from "@angular/material/form-field";
+import {NgxPaginationModule} from "ngx-pagination";
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import {MatFormFieldModule} from "@angular/material/form-field";
     AppRoutingModule,
     FlexLayoutModule,
     MatCardModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    NgxPaginationModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

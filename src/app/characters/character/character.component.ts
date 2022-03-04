@@ -8,8 +8,8 @@ import {Component, Input, OnInit} from '@angular/core';
 export class CharacterComponent implements OnInit {
 
   @Input()
-  // character:any;
   character: any;
+
 
   constructor() { }
 

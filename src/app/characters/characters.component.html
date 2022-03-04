@@ -1,12 +1,23 @@
 
 <div fxFlex fxLayout="column">
   <div fxLayout="row wrap">
-
-    <div fxFlex="25" fxFlex.md="33" fxFle.sm="50" fxFlex.xs="100" fxLayout="column" *ngFor="let character  of allCharacters | async" style="padding: 15px">
+<!--    paginate: { id: 'server', itemsPerPage: 10, currentPage: p, totalItems: total }"-->
+    <div fxFlex="25" fxFlex.md="33" fxFle.sm="50" fxFlex.xs="100" fxLayout="column"
+         *ngFor="let character  of allCharacters  | async | paginate: {itemsPerPage: itemsPerPage, currentPage:paginaAtual, totalItems: total} " style="padding: 15px">
 
     <app-character [character]="character"></app-character>
 
+      <!--inclindo o controle de paginação.-->
+<!--      <div class="text-right">-->
+<!--        <pagination-controls (pageChange)="paginaAtual = $event" previousLabel="Anterior" nextLabel="Próximo"></pagination-controls>-->
+<!--      </div>-->
     </div>
   </div>
+  <div class="text-right" >
+    <pagination-controls (pageChange)="consultaPagina($event)" previousLabel="Anterior" nextLabel="Próxima Página">proxima</pagination-controls>
+  </div>
 </div>
+
+
+
 
