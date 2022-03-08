@@ -16,7 +16,7 @@ export class CharactersApiService {
 
   getAllCharacters(itemsPerPage:number, pageNumber: number): Observable<any> {
     // return this.http.get(`https://gateway.marvel.com:443/v1/public/characters?ts=1&apikey=${this.PUBLIC_KEY}&hash=${this.HASH}`)
-    return this.http.get<any>(this.URL_API + '&limit=' + itemsPerPage + '&offset=' + pageNumber + '&nameStartsWith=iron')
+    return this.http.get<any>(this.URL_API + '&limit=' + itemsPerPage + '&offset=' + pageNumber)
       .pipe(map((data: any) => data.data.results))
   }
 }
