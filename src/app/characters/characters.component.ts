@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Observable} from "rxjs";
-import {CharactersApiService} from "./character/shared/characters-api.service";
+import {finalize, Observable} from "rxjs";
+import {CharactersApiService} from "./shared/characters-api.service";
 
 @Component({
   selector: 'app-characters',
@@ -9,10 +9,11 @@ import {CharactersApiService} from "./character/shared/characters-api.service";
 })
 export class CharactersComponent implements OnInit {
 
-  allCharacters: Observable<any> | undefined;
+  allCharacters: any[] = [];
   paginaAtual: number = 1;
   itemsPerPage: number = 8;
-  total: number = 1559;
+  total: number = 10;
+  //1560
 
   constructor(private characterSvc: CharactersApiService) { }
   ngOnInit(): void {
@@ -20,7 +21,16 @@ export class CharactersComponent implements OnInit {
   }
 
   getCharacters(pageNumber: number){
-    this.allCharacters = this.characterSvc.getAllCharacters (this.itemsPerPage, pageNumber);
+     this.characterSvc.getAllCharacters (this.itemsPerPage, pageNumber)
+      .subscribe(
+        (resposta)=>{
+          //dispara quando success
+          this.allCharacters = resposta
+            console.log(resposta)
+        }
+        , (erro) => {
+          //dispara se der erro
+        });
   }
 
   consultaPagina(e: number) {

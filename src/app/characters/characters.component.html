@@ -2,8 +2,9 @@
 <div fxFlex fxLayout="column" class="container" >
   <div fxLayout="row wrap" class="row justify-content-md-center" >
     <div  class="col-md-auto" fxFlex="25" fxFlex.md="33" fxFle.sm="50" fxFlex.xs="100" fxLayout="column"
-         *ngFor="let character  of allCharacters  | async | paginate: {itemsPerPage: itemsPerPage, currentPage:paginaAtual, totalItems: total} " style="padding: 15px">
-      <app-character [character]="character"></app-character>
+         *ngFor="let character  of allCharacters " style="padding: 15px">
+<!--         *ngFor="let character  of allCharacters  | async | paginate: {itemsPerPage: itemsPerPage, currentPage:paginaAtual, totalItems: total} " style="padding: 15px">-->
+      <app-card-character [character]="character"></app-card-character>
     </div>
       <!--controle de paginação.-->
     <div  class="col-md-auto" >

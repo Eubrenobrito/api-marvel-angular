@@ -10,7 +10,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
-import { CharacterComponent } from './characters/character/character.component';
+import { CardCharacterComponent } from './characters/character/card-character.component';
 import { CharactersComponent } from './characters/characters.component';
 import { HttpClientModule } from "@angular/common/http";
 import {AppRoutingModule} from "../app-routing.module";
@@ -23,7 +23,7 @@ import {NgxPaginationModule} from "ngx-pagination";
   declarations: [
     AppComponent,
     NavbarComponent,
-    CharacterComponent,
+    CardCharacterComponent,
     CharactersComponent
   ],
   imports: [
