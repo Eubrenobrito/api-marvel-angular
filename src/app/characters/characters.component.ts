@@ -11,21 +11,22 @@ export class CharactersComponent implements OnInit {
 
   allCharacters: any[] = [];
   paginaAtual: number = 1;
-  itemsPerPage: number = 8;
-  total: number = 10;
+  itemsPerPage: number = 20;
+  total: number = 0;
   //1560
 
-  constructor(private characterSvc: CharactersApiService) { }
+  constructor(private characterService: CharactersApiService) { }
   ngOnInit(): void {
     this.getCharacters(this.paginaAtual);
   }
 
   getCharacters(pageNumber: number){
-     this.characterSvc.getAllCharacters (this.itemsPerPage, pageNumber)
+     this.characterService.getAllCharacters(this.itemsPerPage, pageNumber * this.itemsPerPage)
       .subscribe(
         (resposta)=>{
           //dispara quando success
-          this.allCharacters = resposta
+          this.allCharacters = resposta.results
+          this.total = resposta.total
             console.log(resposta)
         }
         , (erro) => {
@@ -35,6 +36,7 @@ export class CharactersComponent implements OnInit {
 
   consultaPagina(e: number) {
     this.paginaAtual = e;
+    console.log(e)
     this.getCharacters(this.paginaAtual)
   }
 }
