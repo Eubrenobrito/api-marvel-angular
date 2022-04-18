@@ -3,7 +3,7 @@
 }
 
 .sidenav {
-  width: 200px;
+  width:500px;
 }
 
 //.sidenav .mat-toolbar {
@@ -14,4 +14,57 @@
   position: sticky;
   top: 0;
   z-index: 1;
+}
+
+.headerTop{
+  height: 48px;
+  display: flex;
+  background: black;
+  //position: relative;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: normal;
+  justify-content:normal;
+  align-items:normal;
+
+}
+.logotipo{
+  //max-width: 150px;
+  //min-width: 150px;
+  //max-height: 150px;
+  //min-height: 150px;
+  //padding-bottom: 40px;
+  //margin-bottom: 50px;
+  order: 1;
+}
+/* NAV */
+.header-nav{
+  position: absolute;
+  top:0;
+  right: 0;
+  height: 100%;
+  transition: 1s;
+  order: 2;
+}
+.header-nav li:hover,
+.header-nav li:focus {
+  background: rgb(11, 63, 97);
+  transition: 1s;
+}
+.header-nav ul{
+  margin: 0;
+  padding: 0;
+}
+.header-nav li{
+  list-style: none;
+  display: inline-block;
+  margin: 1 15px 0 0;
+  padding: 13px;
+}
+.header-nav a{
+  color: rgb(241, 232, 232);
+  text-decoration: none;
+  text-transform:uppercase;
+  font-size: 12px;
+  letter-spacing: 8px;
 }

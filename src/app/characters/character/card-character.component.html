@@ -1,6 +1,7 @@
-<!--<p *ngFor="let character of allCharacters | async">-->
-<!--  {{ character | json}}-->
-<!--</p>-->
+
+
+
+<div>
 <mat-card>
   <img mat-card-image src={{character.thumbnail.path}}.{{character.thumbnail.extension}} alt="{{character.thumbnail.name}}">
   <mat-card-title>
@@ -8,12 +9,10 @@
   </mat-card-title>
 
   <mat-card-footer>
-    <a href="{{character.urls[0].url}}" target="_blank" fxFllex mat-flat-button color="primary">Detalhes</a>
+    <a href="{{character.urls[0].url}}" target="_blank" fxFllex mat-flat-button color="warn">Detalhes</a>
   </mat-card-footer>
-
-
-
 </mat-card>
+</div>
 
 
 

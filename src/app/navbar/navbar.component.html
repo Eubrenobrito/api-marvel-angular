@@ -1,40 +1,13 @@
+<header class="headerTop">
+  <img class="logotipo" src="assets/img/marvel-logo-0-1536x1536.png" alt="logotipo da pagina"  >
 
-<!--<mat-sidenav-container class="sidenav-container" class="p-3 mb-2 bg-danger text-white">-->
-<!--  <mat-sidenav #drawer class="sidenav" fixedInViewport-->
-<!--               [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"-->
-<!--               [mode]="(isHandset$ | async) ? 'over' : 'side'"-->
-<!--               [opened]="(isHandset$ | async) === false">-->
-<!--    <mat-toolbar class="p-3 mb-2 bg-danger text-white" >Menu</mat-toolbar>-->
-<!--    <mat-nav-list class="p-3 mb-2 bg-danger text-white">-->
-<!--      <a mat-list-item href="#">Herois</a>-->
-<!--      <a mat-list-item href="#">HQS</a>-->
-<!--      <a mat-list-item href="#">AAAA</a>-->
-<!--    </mat-nav-list>-->
-<!--  </mat-sidenav>-->
-<!--  <mat-sidenav-content>-->
-<!--    <mat-toolbar class="p-3 mb-2 bg-danger text-white">-->
-<!--      <button-->
-<!--        type="button"-->
-<!--        aria-label="Toggle sidenav"-->
-<!--        mat-icon-button-->
-<!--        (click)="drawer.toggle()"-->
-<!--        *ngIf="isHandset$ | async">-->
-<!--        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>-->
-<!--      </button>-->
-<!--      <span>Herois Marvel</span>-->
-<!--    </mat-toolbar>-->
-<!--  </mat-sidenav-content>-->
-<!--</mat-sidenav-container>-->
-    <!-- Add Content Here -->
+  <nav class="header-nav">
+    <ul>
+      <li><a href="#portifolio">Home</a></li>
+    </ul>
 
-
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-  <form class="form-inline" action="/action_page.php">
-    <input class="form-control mr-sm-2" type="text" placeholder="Search">
-
-  </form>
-</nav>
-    <router-outlet>
-    </router-outlet>
+  </nav>
+</header>
+<router-outlet></router-outlet>
 
 

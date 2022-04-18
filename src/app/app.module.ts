@@ -18,6 +18,7 @@ import {FlexLayoutModule} from "@angular/flex-layout";
 import {MatCardModule} from "@angular/material/card";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {NgxPaginationModule} from "ngx-pagination";
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -26,22 +27,23 @@ import {NgxPaginationModule} from "ngx-pagination";
     CardCharacterComponent,
     CharactersComponent
   ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    LayoutModule,
-    MatToolbarModule,
-    MatButtonModule,
-    MatSidenavModule,
-    MatIconModule,
-    MatListModule,
-    HttpClientModule,
-    AppRoutingModule,
-    FlexLayoutModule,
-    MatCardModule,
-    MatFormFieldModule,
-    NgxPaginationModule,
-  ],
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        LayoutModule,
+        MatToolbarModule,
+        MatButtonModule,
+        MatSidenavModule,
+        MatIconModule,
+        MatListModule,
+        HttpClientModule,
+        AppRoutingModule,
+        FlexLayoutModule,
+        MatCardModule,
+        MatFormFieldModule,
+        NgxPaginationModule,
+        FormsModule,
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

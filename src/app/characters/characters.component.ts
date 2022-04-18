@@ -10,10 +10,11 @@ import {CharactersApiService} from "./shared/characters-api.service";
 export class CharactersComponent implements OnInit {
 
   allCharacters: any[] = [];
-  paginaAtual: number = 1;
-  itemsPerPage: number = 20;
+  paginaAtual: number = 0;
+  itemsPerPage: number =8 ;
   total: number = 0;
   //1560
+  nomePersonagem: any = 'breno';
 
   constructor(private characterService: CharactersApiService) { }
   ngOnInit(): void {
@@ -38,5 +39,9 @@ export class CharactersComponent implements OnInit {
     this.paginaAtual = e;
     console.log(e)
     this.getCharacters(this.paginaAtual)
+  }
+
+  pesquisar() {
+    alert(this.nomePersonagem)
   }
 }
