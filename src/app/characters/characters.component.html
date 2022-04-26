@@ -1,11 +1,17 @@
+<div class="rounded mx-auto d-block" *ngIf="carregando">
 
-<div fxFlex fxLayout="column" class="container" >
+  <img class="rounded mx-auto d-block mw-100 mh-100 img-responsive" src="assets/img/loading.gif" width="320" height="320">
+<!--  <h2>Carregando...</h2>-->
+</div>
+<div fxFlex fxLayout="column" class="container" *ngIf="!carregando">
 
-  <div class="container">
-    <div class="header clearfix"></div>
-    <h3 class="align-items-center">Buscar personagem</h3>
+  <div class="container   rounded mx-auto d-block text-center
+          font-weight-bold text-lowercase">
+    <div class="header clearfix "></div>
+    <br>
+    <h3 class="Tittle align-items-center  ">Procure por um personagem</h3>
 
-    <div class="jumbotron">
+    <div class="jumbotron ">
       <div class="col-lg-12">
         <form class="input-group" id="formulario">
           <input
@@ -16,14 +22,13 @@
             [(ngModel)]="this.nomePersonagem"
             [ngModelOptions]="{standalone: true}"
           />
-          <span class="input-group-btn">
-              <button class="btn btn-info" type="button" (click)="pesquisar()">Pesquisar</button>
+          <span class="input-group-btn ">
+              <button class="btn btn-dark" type="submit" (click)="pesquisar()">Pesquisar</button>
           </span>
 
         </form>
       </div>
     </div>
-    <h2>{{this.nomePersonagem}}</h2>
 
   </div>
 

@@ -14,7 +14,8 @@ export class CharactersComponent implements OnInit {
   itemsPerPage: number =8 ;
   total: number = 0;
   //1560
-  nomePersonagem: any = 'breno';
+  nomePersonagem: any = '';
+  carregando=false;
 
   constructor(private characterService: CharactersApiService) { }
   ngOnInit(): void {
@@ -22,26 +23,27 @@ export class CharactersComponent implements OnInit {
   }
 
   getCharacters(pageNumber: number){
-     this.characterService.getAllCharacters(this.itemsPerPage, pageNumber * this.itemsPerPage)
+    this.carregando=true
+     this.characterService.getAllCharacters(this.itemsPerPage, pageNumber * this.itemsPerPage, this.nomePersonagem)
       .subscribe(
         (resposta)=>{
           //dispara quando success
           this.allCharacters = resposta.results
           this.total = resposta.total
-            console.log(resposta)
+          this.carregando=false
         }
         , (erro) => {
+          this.carregando=false
           //dispara se der erro
         });
   }
 
   consultaPagina(e: number) {
     this.paginaAtual = e;
-    console.log(e)
     this.getCharacters(this.paginaAtual)
   }
 
   pesquisar() {
-    alert(this.nomePersonagem)
+    this.getCharacters(this.paginaAtual)
   }
 }
