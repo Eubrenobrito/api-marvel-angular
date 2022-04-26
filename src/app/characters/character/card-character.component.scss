@@ -1,12 +1,22 @@
+.card{
+  //background-color: gray;
+  max-width: 300px;
+  height:420px;
+  max-height: 100%;
+
+}
 .card-image{
-  width: 250px;
-  height: 250px;
+  width: 255px;
+  max-width: 100%;
+  height:255px;
+  max-height: 100%;
 }
 
 .card-title, details, p{
   letter-spacing: inherit;
   //cursor: pointer;
   text-align: center;
+
 }
 button a{
   letter-spacing: 1.2px;

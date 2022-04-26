@@ -15,13 +15,7 @@ export class CharactersApiService {
   }
 
   getAllCharacters(itemsPerPage:number, pageNumber: number, nomePersonagem: string): Observable<any> {
-
     let nameStartsWith = '&nameStartsWith=' + nomePersonagem;
-    //variabel invalida
-    //se for igual a nulo
-    //ou for igual a undefined
-    //ou se for igual a uma string vazia
-    //ou zero
     return this.http.get<any>(this.URL_API + '&limit=' + itemsPerPage + '&offset=' + pageNumber + (nomePersonagem? nameStartsWith: ''))
       .pipe(map((data: any) => data.data))
   }
