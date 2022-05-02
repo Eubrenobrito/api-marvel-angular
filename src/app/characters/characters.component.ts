@@ -44,6 +44,8 @@ export class CharactersComponent implements OnInit {
   }
 
   pesquisar() {
-    this.getCharacters(this.paginaAtual)
+    this.paginaAtual = 0;
+    this.getCharacters(this.paginaAtual);
+
   }
 }
